@@ -1,0 +1,281 @@
+1) Pass-I Assembler
+Explanation
+
+This program implements Pass-I of a two-pass assembler. It reads assembly language instructions from an input file and generates:
+
+Symbol Table
+Literal Table
+Intermediate Code
+
+The program uses:
+
+LC (Location Counter) to assign addresses
+symtab to store symbols and addresses
+littab to store literals
+optab to store opcodes
+
+Pass-I does not generate machine code. It only prepares tables required for Pass-II.
+
+2) Pass-II Assembler
+Explanation
+
+This program implements Pass-II of a two-pass assembler. It reads:
+
+Intermediate Code
+Symbol Table
+Literal Table
+
+generated in Pass-I and converts assembly instructions into machine code.
+
+The program:
+
+replaces symbols with addresses
+replaces literals with addresses
+generates final machine instructions
+
+Output is stored in output.txt.
+
+3) Pass-I Macro Processor
+Explanation
+
+This program implements Pass-I of a macro processor.
+
+It reads macro definitions from input and creates:
+
+MNT (Macro Name Table)
+MDT (Macro Definition Table)
+Intermediate File
+
+The program identifies macro definitions between MACRO and MEND and stores them for later expansion.
+
+4) Pass-II Macro Processor
+Explanation
+
+This program implements Pass-II of a macro processor.
+
+It reads:
+
+MNT
+MDT
+Intermediate File
+
+and expands macro calls into actual instructions.
+
+The expanded code is stored in Output.txt.
+
+5) SJF Scheduling
+Explanation
+
+This program implements Shortest Job First (SJF) CPU scheduling algorithm.
+
+Processes are executed in ascending order of burst time.
+The program calculates:
+
+Waiting Time (WT)
+Turnaround Time (TAT)
+Average WT
+Average TAT
+
+This implementation is non-preemptive because once a process starts execution, it runs completely.
+
+6) Priority Scheduling
+Explanation
+
+This program implements Non-Preemptive Priority CPU Scheduling.
+
+Processes are executed according to priority.
+Higher priority process executes first.
+
+The program calculates:
+
+Waiting Time
+Turnaround Time
+Average WT
+Average TAT
+
+Processes with same priority follow FCFS order.
+
+7) FCFS Scheduling
+Explanation
+
+This program implements First Come First Serve (FCFS) scheduling algorithm.
+
+Processes are executed in the order of arrival.
+
+The program calculates:
+
+Waiting Time
+Turnaround Time
+Average WT
+Average TAT
+
+FCFS is a non-preemptive scheduling algorithm.
+
+8) Round Robin Scheduling
+Explanation
+
+This program implements Round Robin CPU scheduling algorithm.
+
+Each process gets fixed CPU time called Time Quantum.
+
+If process execution is incomplete after quantum expires:
+
+CPU interrupts process
+process moves back to ready queue
+
+The program calculates:
+
+Waiting Time
+Turnaround Time
+Average WT
+Average TAT
+
+Round Robin is a preemptive scheduling algorithm.
+
+9) FIFO Page Replacement
+Explanation
+
+This program implements FIFO (First In First Out) page replacement algorithm.
+
+Pages are loaded into frames sequentially.
+When frames become full:
+
+oldest page is removed first
+
+The program displays:
+
+frame contents
+page faults
+hits
+
+FIFO uses queue concept.
+
+10) LRU Page Replacement
+Explanation
+
+This program implements Least Recently Used (LRU) page replacement algorithm.
+
+When memory becomes full:
+
+least recently used page is replaced
+
+The program uses OrderedDict to maintain page usage order.
+
+It displays:
+
+page faults
+hits
+frame contents
+11) Optimal Page Replacement
+Explanation
+
+This program implements Optimal Page Replacement algorithm.
+
+When replacement is needed:
+
+the page whose next use is farthest in future is replaced
+
+This algorithm gives minimum page faults.
+
+The program displays:
+
+page faults
+hits
+frame contents
+12) First Fit Memory Allocation
+Explanation
+
+This program implements First Fit memory allocation strategy.
+
+Each process is allocated to:
+
+first memory block large enough to hold it
+
+After allocation:
+
+remaining block size is reduced
+
+The program displays allocated block numbers for each process.
+
+13) Best Fit Memory Allocation
+Explanation
+
+This program implements Best Fit memory allocation strategy.
+
+Each process is allocated to:
+
+smallest suitable memory block
+
+This reduces memory wastage but may create fragmentation.
+
+The program displays block allocation details.
+
+14) Worst Fit Memory Allocation
+Explanation
+
+This program implements Worst Fit memory allocation strategy.
+
+Each process is allocated to:
+
+largest available memory block
+
+Remaining memory is reduced after allocation.
+
+The program displays allocation results.
+
+15) Next Fit Memory Allocation
+Explanation
+
+This program implements Next Fit memory allocation strategy.
+
+It is similar to First Fit, but searching starts from:
+
+previously allocated block
+
+instead of beginning every time.
+
+The program performs circular traversal of memory blocks.
+
+16) Arduino IR Sensor Obstacle Detection
+Explanation
+
+This Arduino program detects obstacles using an IR sensor.
+
+When obstacle is detected:
+
+LED turns ON
+message displayed on Serial Monitor
+
+If no obstacle:
+
+LED remains OFF
+
+The program uses digital input from IR sensor.
+
+17) Temperature and Humidity Sensor
+Explanation
+
+This Arduino program reads:
+
+temperature
+humidity
+
+using DHT11 sensor.
+
+Sensor values are displayed on Serial Monitor every 2 seconds.
+
+The program uses DHT library for sensor communication.
+
+18) Dynamic Link Library Program
+Explanation
+
+This program demonstrates creation of a dynamic link library using Python module.
+
+mathlib.py contains mathematical functions:
+
+addition
+subtraction
+multiplication
+division
+
+main.py imports the module and tests all operations.
