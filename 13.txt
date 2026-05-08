@@ -1,0 +1,33 @@
+import org.apache.spark.sql.SparkSession
+
+object WordCountApp {
+
+  def main(args: Array[String]): Unit = {
+
+    // Create Spark Session
+    val spark = SparkSession.builder()
+      .appName("SimpleWordCount")
+      .master("local[*]")
+      .getOrCreate()
+
+    // Read input file
+    val input = spark.read.textFile("input.txt")
+
+    // Process data
+    val wordCounts = input
+      .flatMap(line => line.split(" "))
+      .groupByKey(word => word)
+      .count()
+
+    // Show output
+    wordCounts.show()
+
+    // Save output to file
+    wordCounts.write
+      .mode("overwrite")
+      .csv("output")
+
+    // Stop Spark
+    spark.stop()
+  }
+}
