@@ -1,0 +1,72 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "8c25bd04-8003-42cd-8ec0-ff49fd42f1ed",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Original array: [64, 25, 12, 22, 11]\n",
+      "Sorted array: [11, 12, 22, 25, 64]\n"
+     ]
+    }
+   ],
+   "source": [
+    "def selection_sort(arr):\n",
+    "    n = len(arr)\n",
+    "\n",
+    "    for i in range(n):\n",
+    "        min_index = i\n",
+    "\n",
+    "        for j in range(i + 1, n):\n",
+    "            if arr[j] < arr[min_index]:\n",
+    "                min_index = j\n",
+    "\n",
+    "        arr[i], arr[min_index] = arr[min_index], arr[i]\n",
+    "\n",
+    "    return arr\n",
+    "\n",
+    "\n",
+    "# Example usage\n",
+    "arr = [64, 25, 12, 22, 11]\n",
+    "\n",
+    "print(\"Original array:\", arr)\n",
+    "sorted_arr = selection_sort(arr)\n",
+    "print(\"Sorted array:\", sorted_arr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c906982d-7cf5-440b-b297-e0b3ab75a8eb",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
